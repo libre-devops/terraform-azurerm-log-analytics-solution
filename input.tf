@@ -15,7 +15,7 @@ variable "location" {
 
 variable "plan" {
   description = "The plan you wish to build the solution for"
-  type        = map(any)
+  type        = any
 }
 
 variable "rg_name" {
