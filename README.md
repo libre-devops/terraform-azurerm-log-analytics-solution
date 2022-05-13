@@ -22,7 +22,15 @@ module "law_solution" {
   location = module.rg.rg_location
   tags     = module.rg.rg_tags
 
-  solution_name
+  solution_name    = "ContainerInsights"
+  law_workspace_id = module.law.law_workspace_id
+  law_name         = module.law.law_name
+
+  plan = {
+    publisher = "Microsoft"
+    product   = "OMSGallery/ContainerInsights"
+  }
+}
 ```
 
 ## Requirements
