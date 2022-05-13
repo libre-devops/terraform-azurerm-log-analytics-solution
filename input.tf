@@ -32,6 +32,22 @@ variable "solution_name" {
   type        = string
 }
 
+#variable "product" {
+#  description = "The name of the product for plan"
+#  type = string
+#}
+#
+#variable "promotion_code" {
+#  description = "The name of the promotion code, if one is used"
+#  type = string
+#  default = null
+#}
+#
+#variable "publisher" {
+#  description = "The name of the publisher"
+#  type = string
+#}
+
 variable "tags" {
   type        = map(string)
   description = "A map of the tags to use on the resources that are deployed with this module."
