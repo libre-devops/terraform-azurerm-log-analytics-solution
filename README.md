@@ -16,7 +16,7 @@ module "law" {
 }
 
 module "law_solution" {
-  source = "registry.terraform.io/libre-devops/log-analytics-workspace/azurerm"
+  source = "registry.terraform.io/libre-devops/log-analytics-solution/azurerm"
 
   rg_name  = module.rg.rg_name
   location = module.rg.rg_location
