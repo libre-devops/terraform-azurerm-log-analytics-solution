@@ -9,9 +9,9 @@ resource "azurerm_log_analytics_solution" "law_solution" {
   dynamic "plan" {
     for_each = var.plan
     content {
-      product        = lookup(plan.value, "product", null)
-      publisher      = lookup(plan.value, "publisher", null)
-      promotion_code = lookup(plan.value, "promotion_code", null)
+      product        = plan.value["product"]
+      publisher      = plan.value["publisher"]
+      promotion_code = plan.value["promotion_code"]
     }
   }
 }
