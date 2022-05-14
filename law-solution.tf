@@ -7,11 +7,11 @@ resource "azurerm_log_analytics_solution" "law_solution" {
   tags                  = var.tags
 
   dynamic "plan" {
-    for_each = var.plan
+    for_each = lookup(var.settings, "plan", {}) != {} ? [1] : []
     content {
-      product        = var.plan.product
-      publisher      = var.plan.publisher
-      promotion_code = var.plan.promotion_code
+      product        = lookup(var.settings.plan, "product", null)
+      publisher      = lookup(var.settings, "publisher", null)
+      promotion_code = lookup(var.settings, "promotion_code", null)
     }
   }
 }
