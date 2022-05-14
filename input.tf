@@ -13,11 +13,6 @@ variable "location" {
   type        = string
 }
 
-variable "plan" {
-  description = "The plan you wish to build the solution for"
-  type        = any
-}
-
 variable "rg_name" {
   description = "The name of the resource group, this module does not create a resource group, it is expecting the value of a resource group already exists"
   type        = string
