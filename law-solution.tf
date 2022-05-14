@@ -10,8 +10,8 @@ resource "azurerm_log_analytics_solution" "law_solution" {
     for_each = lookup(var.settings, "plan", {}) != {} ? [1] : []
     content {
       product        = lookup(var.settings.plan, "product", null)
-      publisher      = lookup(var.settings, "publisher", null)
-      promotion_code = lookup(var.settings, "promotion_code", null)
+      publisher      = lookup(var.settings.plan, "publisher", null)
+      promotion_code = lookup(var.settings.plan, "promotion_code", null)
     }
   }
 }
